@@ -29,6 +29,9 @@ while True:
     if not ret:
         break
 
+    # Flip the frame horizontally to disable mirroring
+    frame = cv2.flip(frame, 1)  # Flip code 1 means flipping around the y-axis (horizontal flip)
+
     # Resize frame for consistency
     frame = cv2.resize(frame, (640, 480))
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
